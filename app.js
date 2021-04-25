@@ -16,8 +16,34 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(cookieParser());
 
+const Contact = require('./modules/contact');
+
+mongoose.connect('mongodb://localhost:27017/clients', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    console.log("Database started");
+})
+
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + '/public/index.html'));
+})
+
+app.get("/contactus", (req, res) => {
+    res.render("contact");
+})
+
+app.post("/postcontact", (req, res) => {
+    console.log(req.body);
+    const con = new Contact(req.body);
+    con.save((err, done) => {
+        if (err) {
+            res.redirect("/")
+        } else {
+            res.redirect("/done");
+        }
+    })
+})
+app.get("/done", (req, res) => {
+    res.sendFile(path.join(__dirname + '/public/done.html'));
 })
 
 app.listen(port, () => {
