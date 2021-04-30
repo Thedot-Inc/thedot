@@ -20,17 +20,20 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/nivo-lightbox.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 
 <body>
-
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
     <!-- Header Section Start -->
     <header id="home" class="hero-area">
         <div class="overlay">
-            <span></span>
-            <span></span>
+            <img src="img/cover.png" style="width: 100%;z-index: -12;">
+
         </div>
         <nav class="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar">
             <div class="container">
@@ -73,7 +76,7 @@
         <div class="container">
             <div class="row space-100">
                 <div class="col-lg-6 col-md-12 col-xs-12">
-                    <div class="contents">
+                    <div class="contents content">
                         <h2 class="head-title">Your Trusted Development Partner For Business <br>and Startups</h2>
                         <p>We are solving the world's biggest problems with technology.<br> We help startups and global brands with digital products on Mobile, Web, SaaS, and Machine Learning.</p>
                         <div class="header-button">
@@ -82,11 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12 col-xs-12 p-0">
-                    <div class="intro-img">
-                        <img src="img/intro.png" alt="">
-                    </div>
-                </div>
+
             </div>
         </div>
     </header>
@@ -276,8 +275,8 @@
                         <div>
                             <h2 class="section-title">Recent Works</h2>
                             <div class="desc-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
-                                <p>eiusmod tempor incididunt ut labore et dolore.</p>
+                                <p>Currently we are working on Cwtch</p>
+                                <p>New and app.</p>
                             </div>
                         </div>
                     </div>
@@ -720,8 +719,8 @@
                         <div>
                             <h2 class="section-title">Pricing Plans</h2>
                             <div class="desc-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
-                                <p>eiusmod tempor incididunt ut labore et dolore.</p>
+                                <p>need to think</p>
+                                <p>here too</p>
                             </div>
                         </div>
                     </div>
@@ -1240,7 +1239,13 @@
         <div class="loader" id="loader-1"></div>
     </div>
     <!-- End Preloader -->
-
+    <script>
+        var cursor = document.querySelector(".cursor");
+        var cursor2 = document.querySelector(".cursor2");
+        document.addEventListener("mousemove", function(e) {
+            cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
+        });
+    </script>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="js/jquery-min.js"></script>
     <script src="js/popper.min.js"></script>
