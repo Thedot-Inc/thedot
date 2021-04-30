@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 const Contact = require('./modules/contact');
 
-mongoose.connect('mongodb://localhost:27017/clients', { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("Database started");
 })
 
