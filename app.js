@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 var cookieParser = require('cookie-parser');
 
-const port = process.env.PORt || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(express.static("public"));
 var path = require('path');
