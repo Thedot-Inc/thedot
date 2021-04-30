@@ -77,12 +77,59 @@ a:not([href]):not([tabindex]):hover {
 }
 
 
+/* Cursor animation */
+
+.content p {
+    width: 700px;
+    line-height: 26px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+}
+
+.cursor2 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #c6c6c6;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+}
+
+.content:hover~.cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: #c6c6c6;
+    opacity: .5;
+}
+
+.content:hover~.cursor2 {
+    opacity: 0;
+}
+
+
 /* ==========================================================================
    Section Title
    ========================================================================== */
 
 .section {
     padding: 130px 0px;
+    /* margin-top: 42px; */
 }
 
 .form-control:focus {
@@ -178,8 +225,8 @@ a:not([href]):not([tabindex]):hover {
 
 .btn-border-filled {
     cursor: pointer;
-    background-color: #3ecf8e;
-    border: 1px solid #3ecf8e;
+    background-color: #CE262F;
+    border: 1px solid #CE262F;
     color: #fff;
     box-shadow: 0px 8px 9px 0px rgba(96, 94, 94, 0.17);
     width: 180px;
@@ -436,8 +483,8 @@ button:focus {
 }
 
 .menu-bg {
-    background: #5533ff;
-    background: linear-gradient(95deg, #5533ff 40%, #383CC1 100%) !important;
+    background: #000;
+    background: linear-gradient(95deg, #000 40%, #000 100%) !important;
     box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.1);
     z-index: 9999;
     padding: 5px;
@@ -548,15 +595,15 @@ button:focus {
     height: 100%;
     top: 0px;
     left: 0px;
-    background: #5533ff;
-    background: linear-gradient(95deg, #120E43 40%, #E6425E 100%);
-    -webkit-transform: skewY(-12deg);
-    transform: skewY(-12deg);
+    background: transparent;
+    background: linear-gradient(95deg, #000 40%, #000 100%);
     -webkit-transform-origin: 0;
     transform-origin: 0;
     z-index: -12;
 }
 
+
+/* 
 .hero-area .overlay :nth-child(1) {
     width: 33.33333%;
     width: calc(100% / 2);
@@ -578,7 +625,7 @@ button:focus {
     position: absolute;
     height: 155px;
     left: 3%;
-}
+} */
 
 .hero-area .contents {
     padding: 220px 0;
@@ -609,7 +656,7 @@ button:focus {
 
 .hero-area .contents .btn-border {
     border: 1px solid #fff;
-    color: #3ecf8e !important;
+    color: #CE262F !important;
     -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
     width: 180px;
@@ -620,7 +667,7 @@ button:focus {
 
 .hero-area .contents .btn-border:hover {
     background: #fff;
-    color: #3ecf8e;
+    color: #CE262F;
 }
 
 .hero-area .intro-img {
@@ -647,7 +694,7 @@ button:focus {
 }
 
 #services .services-item:hover {
-    border: 1px solid #3ecf8e;
+    border: 1px solid #CE262F;
     box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
     -moz-transition: all .4s ease;
     -webkit-transition: all .4s ease;
@@ -655,7 +702,7 @@ button:focus {
 }
 
 #services .services-item .icon {
-    background: #e3fff2;
+    background: #CE262F;
     width: 110px;
     height: 110px;
     margin: 0px auto;
@@ -669,7 +716,7 @@ button:focus {
 
 #services .services-item .icon i {
     font-size: 40px;
-    color: #3ecf8e;
+    color: #fff;
     position: absolute;
     left: 0;
     right: 0;
@@ -687,6 +734,252 @@ button:focus {
     font-size: 16px;
     margin-bottom: 10px;
     color: #5e629c;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+/*reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*product info */
+
+h1 {
+    color: #ff6d39;
+    font-family: "muli";
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: 21px;
+    display: inline-block;
+}
+
+i.fa.fa-search {
+    margin-left: 90px;
+}
+
+.product-name i {
+    color: #ffffff;
+    transition: 0.3s all ease;
+    margin: 0px 12px;
+}
+
+.product-name i:hover {
+    color: #ff6d39;
+    cursor: pointer;
+}
+
+h3 {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 84px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 29px;
+}
+
+h4 {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h4.dis {
+    display: inline-block;
+    color: #ffffff;
+    font-family: "muli";
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 30px;
+    text-decoration: line-through #ea3201;
+}
+
+h4.dis span {
+    text-decoration: line-through #ea3201;
+}
+
+.discount {
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+ul li {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.bg {
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    padding: 2px;
+    margin-right: 20px;
+    transition: 0.3s all ease;
+    border-radius: 50%;
+}
+
+.bg:hover {
+    background-color: #ff6d39;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.yellow {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #fec60f;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.black {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #000000;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.blue {
+    content: "";
+    width: 13px;
+    height: 13px;
+    background-color: #02a2ca;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    transition: 0.3s all ease;
+}
+
+.yellow:hover,
+.black:hover,
+.blue:hover {
+    border: 2px solid #f76b39;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.foot {
+    color: #ffffff;
+    font-family: "muli";
+    margin-top: 20px;
+    margin-right: 50px;
+    font-weight: 500;
+    font-size: 11px;
+    float: left;
+    transition: 0.3s all ease;
+}
+
+.foot i:nth-child(1) {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.foot:hover {
+    color: #f76b39;
+    cursor: pointer;
+}
+
+
+/*shoe slider indicator*/
+
+.left i {
+    color: #ffd5c6;
+    margin-top: 260px;
+    transition: 0.3s all ease;
+}
+
+.fa-long-arrow-left {
+    margin-left: -275px;
+}
+
+.fa-long-arrow-right {
+    margin-left: 15px;
+}
+
+.left i:hover {
+    cursor: pointer;
+    color: #2a2f40;
+}
+
+
+/*main card*/
+
+.card {
+    display: flex;
+    align-items: center;
+    background: #252831 url(https://www.dropbox.com/s/fuadz3vmw2nsylm/bg.png?raw=1) no-repeat;
+    height: 600px;
+    width: 800px;
+    margin: 0 auto;
+    box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 2%;
+}
+
+.left {
+    content: "";
+    height: 395px;
+    width: 330px;
+    display: flex;
+    align-items: center;
+    background-color: #ff6d39;
+    margin-left: 93px;
+    border-radius: 0% 50% 50% 0%;
+    position: absolute;
+    z-index: 5;
+}
+
+.left img {
+    margin-left: -88px;
+    margin-top: 60px;
+}
+
+.right {
+    content: "";
+    height: 395px;
+    width: 550px;
+    background-color: #2a2f40;
+    z-index: 3;
+    margin-left: 200px;
+}
+
+.product-info {
+    position: absolute;
+    margin-left: 245px;
+    height: 394px;
+    width: 305px;
+    z-index: 10;
 }
 
 
@@ -945,6 +1238,7 @@ button:focus {
 
 #showcase {
     padding-bottom: 375px;
+    background-color: #000;
 }
 
 #showcase .right-position {
@@ -968,8 +1262,8 @@ button:focus {
 }
 
 #showcase .gradient-bg {
-    background: #5533ff;
-    background: linear-gradient(95deg, #5533ff 40%, #25ddf5 100%);
+    background: #000;
+    background: linear-gradient(95deg, #000 40%, #000 100%);
     padding: 119px 0px 80px 0px;
 }
 
@@ -1073,7 +1367,7 @@ button:focus {
 
 #testimonial {
     margin-bottom: 270px;
-    background: url(../img/bg/testimonial-bg.jpg) no-repeat center center;
+    background: url(../img/us@2x.png) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1124,7 +1418,7 @@ button:focus {
 }
 
 #testimonial #client-testimonial .owl-controls .owl-buttons div.owl-prev {
-    color: #3ecf8e;
+    color: #c90000;
     display: inline-block;
     zoom: 1;
     *display: inline;
@@ -1811,7 +2105,7 @@ button:focus {
 
 #footer-Content {
     padding-top: 130px;
-    background: #180e29;
+    background: #000;
 }
 
 #footer-Content .footer-logo img {
